@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Create configuration object named `config`.
+# The '2' represent the version of this object
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    config.vm.box_version = "20211001.0.5"
+
+    config.vm.define "hferraudS" do |server|
+        server.vm.hostname = "hferraudS"
+        config.vm.network "private_network", ip: "192.168.56.110"
+    end
+
+    config.vm.define "hferraudSW" do |server|
+        server.vm.hostname = "hferraudSW"
+        config.vm.network "private_network", ip: "192.168.56.111"
+    end
+end
