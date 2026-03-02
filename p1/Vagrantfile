@@ -9,11 +9,25 @@ Vagrant.configure("2") do |config|
 
     config.vm.define "hferraudS" do |server|
         server.vm.hostname = "hferraudS"
-        config.vm.network "private_network", ip: "192.168.56.110"
+        server.vm.network "private_network", ip: "192.168.56.110"
+
+        server.vm.provider "virtualbox" do |vb|
+            vb.memory = 2048
+            vb.cpus = 1
+        end
+
+        server.vm.provision "k3s_server", type: "shell", path: "scripts/install_k3s_server.sh"
     end
 
-    config.vm.define "hferraudSW" do |server|
-        server.vm.hostname = "hferraudSW"
-        config.vm.network "private_network", ip: "192.168.56.111"
+    config.vm.define "hferraudSW" do |worker|
+        worker.vm.hostname = "hferraudSW"
+        worker.vm.network "private_network", ip: "192.168.56.111"
+
+        worker.vm.provider "virtualbox" do |vb|
+            vb.memory = 2048
+            vb.cpus = 1
+        end
+
+        worker.vm.provision "k3s_agent", type: "shell", path: "scripts/install_k3s_agent.sh"
     end
 end
