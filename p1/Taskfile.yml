@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  run:
+    desc: Run everything to be able to run the `show` command
+    cmds:
+      - vagrant up
+
+  clean:
+    desc: Clean up everything
+    cmds:
+      - vagrant destroy -f
+
+  show:
+    desc: Run the commands needed to show that everything works fine
+    cmds:
+      - vagrant ssh hferraudS -c "sudo kubectl get nodes -o wide"
+      - vagrant ssh hferraudS -c "ifconfig \$(ip -o -4 addr show | awk '\$4 ~ /^192\.168\.56\./ {print \$2}')"
+      - vagrant ssh hferraudSW -c "ifconfig \$(ip -o -4 addr show | awk '\$4 ~ /^192\.168\.56\./ {print \$2}')"

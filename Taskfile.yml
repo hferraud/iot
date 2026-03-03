@@ -1,0 +1,10 @@
+version: '3'
+
+includes:
+  p1:
+    dir: ./p1
+    taskfile: ./p1/Taskfile.yml
+
+  p2:
+    dir: ./p2
+    taskfile: ./p2/Taskfile.yml
