@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/jammy64"
+    config.vm.box_version = "20241002.0.0"
+
+    config.vm.define "hferraudS" do |server|
+        server.vm.hostname = "hferraudS"
+        server.vm.network "public_network", ip: "192.168.56.110"
+
+        server.vm.provider "virtualbox" do |vb|
+            vb.memory = 2048
+            vb.cpus = 1
+        end
+    end
+end
