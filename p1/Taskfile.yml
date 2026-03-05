@@ -1,12 +1,12 @@
 version: '3'
 
 tasks:
-  run:
+  up:
     desc: Run everything to be able to run the `show` command
     cmds:
       - vagrant up
 
-  clean:
+  down:
     desc: Clean up everything
     cmds:
       - vagrant destroy -f
