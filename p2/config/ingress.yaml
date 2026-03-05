@@ -34,8 +34,3 @@ spec:
                 name: app-three
                 port:
                   number: 80
-#  defaultBackend:
-#    service:
-#      name: app-three
-#      port:
-#        number: 80

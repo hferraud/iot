@@ -5,33 +5,6 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
     config.vm.box_version = "20211001.0.5"
 
-#     NODES = [
-#         {
-#             :hostname => "hferraudS",
-#             :ip => "192.168.56.110",
-#             :provision_script => "scripts/install_k3s_server.sh"
-#         },
-#         {
-#             :hostname => "hferraudSW",
-#             :ip => "192.168.56.111",
-#             :provision_script => "scripts/install_k3s_agent.sh"
-#         }
-#     ]
-#
-#     NODES.each do |node|
-#         config.vm.define node[:hostname] do |cfg|
-#             cfg.vm.hostname = node[:hostname]
-#             cfg.vm.network "private_network", ip: node[:ip]
-#
-#             cfg.vm.provider "virtualbox" do |vb|
-#                 vb.memory = 2048
-#                 vb.cpus = 1
-#             end
-#
-#             cfg.vm.provision "shell", path: node[:provision_script]
-#         end
-#     end
-
     config.vm.define "hferraudS" do |server|
         server.vm.hostname = "hferraudS"
         server.vm.network "private_network", ip: "192.168.56.110"
