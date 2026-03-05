@@ -1,15 +1,21 @@
 version: '3'
 
 tasks:
-  run:
+  up:
     desc: Run everything to be able to run the `show` command
     cmds:
       - vagrant up
 
-  clean:
+  down:
     desc: Clean up everything
     cmds:
       - vagrant destroy -f
 
   show:
     desc: Run the commands needed to show that everything works fine
+    cmds:
+      - vagrant ssh hferraudS -c "sudo kubectl get all"
+      - vagrant ssh hferraudS -c "sudo kubectl get ingress"
+      - vagrant ssh hferraudS -c "curl -H Host:app1.com 192.168.56.110"
+      - vagrant ssh hferraudS -c "curl -H Host:app2.com 192.168.56.110"
+      - vagrant ssh hferraudS -c "curl 192.168.56.110"
