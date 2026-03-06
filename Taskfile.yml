@@ -10,3 +10,6 @@ includes:
   p3:
     dir: ./p3
     taskfile: ./p3/Taskfile.yml
+  bonus:
+    dir: ./bonus
+    taskfile: ./bonus/Taskfile.yml

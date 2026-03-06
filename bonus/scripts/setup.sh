@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+source config/.env
+
+k3d cluster create $K3D_CLUSTER_NAME -c config/k3d.yaml
+
+kubectl apply -f config/namespace.yaml
+
+helm install gitlab gitlab/gitlab \
+  --set global.hosts.domain=example.com \
+  --set global.hosts.externalIP=0.0.0.0 \
+  --set global.hosts.https=false \
+  --set global.hosts.gitlab.https=false \
+  --set certmanager-issuer.email=me@example.com \
+  --set gitlab-runner.install=false \
+  --namespace gitlab
+
+#kubectl apply -n $NAMESPACE_ARGOCD --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+#kubectl patch svc argocd-server -n $NAMESPACE_ARGOCD -p '{"spec": {"type": "LoadBalancer"}}'
+#
+#kubectl apply -f config/application.yaml
+
+
