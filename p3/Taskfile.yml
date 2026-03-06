@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  up:
+    desc: Run everything to be able to run the `show` command
+    cmds:
+      - ./scripts/setup.sh
+
+  down:
+    desc: Clean up everything
+    cmds:
+      - k3d cluster delete p3
+
+  show:
+    desc: Run the commands needed to show that everything works fine
+    cmds:
+      - argocd admin initial-password -n argocd
+      - echo $(curl localhost:8888)
