@@ -4,6 +4,7 @@ metadata:
   name: gitlab-ingress
   namespace: gitlab
 spec:
+  ingressClassName: traefik
   rules:
     - http:
         paths:

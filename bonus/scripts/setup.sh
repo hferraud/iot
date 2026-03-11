@@ -16,6 +16,8 @@ helm install gitlab gitlab/gitlab \
   --set gitlab-runner.install=false \
   --namespace gitlab
 
+kubectl apply -f config/ingress.yaml
+
 #kubectl apply -n $NAMESPACE_ARGOCD --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 #kubectl patch svc argocd-server -n $NAMESPACE_ARGOCD -p '{"spec": {"type": "LoadBalancer"}}'
 #
