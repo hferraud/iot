@@ -15,4 +15,5 @@ tasks:
     desc: Run the commands needed to show that everything works fine
     cmds:
       - argocd admin initial-password -n argocd
+      - kubectl -n gitlab get secret gitlab-gitlab-initial-root-password -o jsonpath='{.data.password}' | base64 --decode && echo
       - echo $(curl localhost:8888)

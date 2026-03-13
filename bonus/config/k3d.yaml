@@ -2,6 +2,12 @@ apiVersion: k3d.io/v1alpha5
 kind: Simple
 servers: 1
 agents: 0
+registries:
+  config: |
+    mirrors:
+      "docker.io":
+        endpoint:
+          - https://nexus.42lyon.fr:5000
 ports:
   - port: 8888:8888
   - port: 443:443

@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/hferraud/iot_deployment_hferraud.git
+    repoURL: http://gitlab-webservice-default.gitlab.svc.cluster.local:8181/root/iot_deployment_hferraud.git
     targetRevision: main
     path: app
 
