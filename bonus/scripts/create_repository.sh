@@ -17,12 +17,10 @@ GITLAB_PAT=$(kubectl exec -n ${NAMESPACE} $GITLAB_TOOLBOX_POD -- gitlab-rails ru
     expires_at: 1.year.from_now
   ); puts t.errors.any? ? t.errors.full_messages : t.token")
 
-#echo $GITLAB_PAT
-#
-#curl --request POST "http://gitlab.example.com/api/v4/projects" \
-#--header "PRIVATE-TOKEN: $GITLAB_PAT" \
-#--header "Content-Type: application/json" \
-#--data '{"name": "iot_deployment_hferraud", "visibility": "public"}'
+curl --request POST "http://gitlab.example.com/api/v4/projects" \
+--header "PRIVATE-TOKEN: $GITLAB_PAT" \
+--header "Content-Type: application/json" \
+--data '{"name": "iot_deployment_hferraud", "visibility": "public"}'
 
 rm -rf ${WORKDIR}
 git clone ${GITHUB_REPO} ${WORKDIR}
