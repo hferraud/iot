@@ -15,7 +15,7 @@ rm -rf ${VAGRANT_PATH}
 
 echo "Installing vagrant..."
 sudo mkdir -p ${VAGRANT_PATH}
-unzip -o -q ${VAGRANT_TMP} -d ${VAGRANT_PATH}
+sudo unzip -o -q ${VAGRANT_TMP} -d ${VAGRANT_PATH}
 
 rm -rf ${VAGRANT_TMP}
 
