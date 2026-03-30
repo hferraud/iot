@@ -14,7 +14,7 @@ wget -q ${URL} -O ${VAGRANT_TMP}
 rm -rf ${VAGRANT_PATH}
 
 echo "Installing vagrant..."
-mkdir -p ${VAGRANT_PATH}
+sudo mkdir -p ${VAGRANT_PATH}
 unzip -o -q ${VAGRANT_TMP} -d ${VAGRANT_PATH}
 
 rm -rf ${VAGRANT_TMP}
