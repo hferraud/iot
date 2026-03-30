@@ -24,4 +24,4 @@ tasks:
     - .script/install_k3d.sh
     - .script/install_kubectl.sh
     - .script/install_vagrant.sh
-    - .script/install_virtualbox.sh
+    - bash .script/install_virtualbox.sh
