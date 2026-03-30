@@ -13,3 +13,14 @@ includes:
   bonus:
     dir: ./bonus
     taskfile: ./bonus/Taskfile.yml
+
+tasks: 
+  desc: Install all depencies necessary for the projet IOT
+  cmds:
+  - bash .script/install_argocd.sh
+  - bash .script/install_docker.sh
+  - bash .script/install_helm.sh
+  - bash .script/install_k3d.sh
+  - bash .script/install_kubectl.sh
+  - bash .script/install_vagrant.sh
+  - bash .script/install_virtualbox.sh
