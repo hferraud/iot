@@ -19,7 +19,7 @@ sudo unzip -o -q ${VAGRANT_TMP} -d ${VAGRANT_PATH}
 
 rm -rf ${VAGRANT_TMP}
 
-ln -sf "${VAGRANT_PATH}/vagrant" "${BIN_PATH}"
+sudo ln -sf "${VAGRANT_PATH}/vagrant" "${BIN_PATH}"
 
 echo "Done"
 vagrant --version
