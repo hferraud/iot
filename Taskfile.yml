@@ -18,10 +18,10 @@ tasks:
   install:
     desc: Install all depencies necessary for the projet IOT
     cmds:
-    - bash .script/install_argocd.sh
-    - bash .script/install_docker.sh
-    - bash .script/install_helm.sh
-    - bash .script/install_k3d.sh
-    - bash .script/install_kubectl.sh
-    - bash .script/install_vagrant.sh
-    - bash .script/install_virtualbox.sh
+    - .script/install_argocd.sh
+    - .script/install_docker.sh
+    - .script/install_helm.sh
+    - .script/install_k3d.sh
+    - .script/install_kubectl.sh
+    - .script/install_vagrant.sh
+    - .script/install_virtualbox.sh
