@@ -25,5 +25,5 @@ tasks:
     - .script/install_kubectl.sh
     - .script/install_vagrant.sh
     - bash .script/install_virtualbox.sh
-    - sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+    # - sudo chmod 644 /etc/rancher/k3s/k3s.yaml
     - sudo chown -R $USER $HOME/.kube
