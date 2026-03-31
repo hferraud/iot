@@ -7,6 +7,10 @@ k3d cluster create $K3D_CLUSTER_NAME -c config/k3d.yaml
 
 kubectl apply -f config/namespace.yaml
 
+helm repo add gitlab https://charts.gitlab.io/
+
+helm repo update
+
 helm install gitlab gitlab/gitlab \
   --set global.edition=ce \
   --set global.hosts.domain=example.com \
