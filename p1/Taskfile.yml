@@ -5,6 +5,9 @@ tasks:
     desc: Run everything to be able to run the `show` command
     cmds:
       - vagrant up
+      - sudo echo "127.0.0.1  app1.com" >> /etc/hosts
+      - sudo echo "127.0.0.1  app2.com" >> /etc/hosts
+      - sudo echo "127.0.0.1  app3.com" >> /etc/hosts
 
   down:
     desc: Clean up everything

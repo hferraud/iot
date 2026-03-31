@@ -2,7 +2,7 @@ version: '3'
 
 tasks:
   up:
-    desc: Run everything to be able to run the `show` command
+    desc: Run everything to be able to run the `show` command, Launch create_repository when everything is up
     cmds:
       - ./scripts/setup.sh
 
