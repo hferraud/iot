@@ -8,9 +8,9 @@ GITHUB_REPO="https://github.com/hferraud/${REPO_NAME}.git"
 GITLAB_REPO="http://gitlab.example.com/root/${REPO_NAME}.git"
 WORKDIR="/tmp/${REPO_NAME}"
 
-GITLAB_TOOLBOX_POD=$(kubectl get pods -n ${NAMESPACE} -l app=toolbox -o jsonpath='{.items[0].metadata.name}')
+GITLAB_TOOLBOX_POD=$(sudo kubectl get pods -n ${NAMESPACE} -l app=toolbox -o jsonpath='{.items[0].metadata.name}')
 
-GITLAB_PAT=$(kubectl exec -n ${NAMESPACE} $GITLAB_TOOLBOX_POD -- gitlab-rails runner \
+GITLAB_PAT=$(sudo kubectl exec -n ${NAMESPACE} $GITLAB_TOOLBOX_POD -- gitlab-rails runner \
   "t = User.find_by_username('root').personal_access_tokens.create(
     name: 'script-token3',
     scopes: ['api', 'write_repository', 'read_repository'],
