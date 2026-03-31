@@ -11,6 +11,13 @@ tasks:
     cmds:
       - k3d cluster delete bonus
 
+  show-status:
+    desc: Show the status of pods
+    cmds: 
+      - kubectl get pods -n argocd
+      - kubectl get pods -n gitlab
+
+
   show:
     desc: Run the commands needed to show that everything works fine
     cmds:

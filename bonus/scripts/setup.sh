@@ -30,7 +30,4 @@ kubectl -n argocd patch deployment argocd-server \
 
 kubectl apply -f config/application.yaml
 
-sudo echo '127.0.0.1 gitlab.example.com' >> /etc/hosts
-sudo echo '127.0.0.1 argocd.example.com' >> /etc/hosts
-
 
