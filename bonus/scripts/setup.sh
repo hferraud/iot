@@ -19,6 +19,8 @@ helm install gitlab gitlab/gitlab \
 
 kubectl apply -f config/ingress.yaml
 
+sudo bash .script/create_repository.sh
+
 kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl -n argocd patch deployment argocd-server \
   --type='json' \
