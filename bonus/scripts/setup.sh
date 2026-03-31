@@ -21,8 +21,6 @@ helm install gitlab gitlab/gitlab \
   --set gitlab-runner.install=false \
   --namespace gitlab
 
-sudo bash .script/create_repository.sh
-
 kubectl apply -f config/ingress.yaml
 
 kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml

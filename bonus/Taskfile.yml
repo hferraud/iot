@@ -5,6 +5,7 @@ tasks:
     desc: Run everything to be able to run the `show` command
     cmds:
       - ./scripts/setup.sh
+      - ./scripts/create_repository.sh
 
   down:
     desc: Clean up everything
